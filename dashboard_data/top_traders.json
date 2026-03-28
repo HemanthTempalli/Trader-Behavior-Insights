@@ -1,0 +1,357 @@
+[
+  {
+    "account": "0x083384f8...2a9012",
+    "total_pnl": 1599059.96,
+    "trade_count": 1731,
+    "win_rate": 79.26,
+    "total_volume": 29964402.19,
+    "best_trade": 135329.09,
+    "worst_trade": -117990.1,
+    "favorite_sentiment": "Fear",
+    "favorite_coin": "ETH",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 124769.22,
+        "count": 37,
+        "win_rate": 100.0
+      },
+      "Fear": {
+        "pnl": 1112203.69,
+        "count": 1050,
+        "win_rate": 89.05
+      },
+      "Neutral": {
+        "pnl": 125650.12,
+        "count": 245,
+        "win_rate": 100.0
+      },
+      "Greed": {
+        "pnl": 276719.27,
+        "count": 153,
+        "win_rate": 60.13
+      },
+      "Extreme Greed": {
+        "pnl": -40282.34,
+        "count": 246,
+        "win_rate": 25.61
+      }
+    }
+  },
+  {
+    "account": "0xbaaaf657...637864",
+    "total_pnl": 940132.39,
+    "trade_count": 9995,
+    "win_rate": 99.12,
+    "total_volume": 34795882.08,
+    "best_trade": 68959.0,
+    "worst_trade": -5.44,
+    "favorite_sentiment": "Fear",
+    "favorite_coin": "HYPE",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 261917.98,
+        "count": 1700,
+        "win_rate": 100.0
+      },
+      "Fear": {
+        "pnl": 620840.96,
+        "count": 6281,
+        "win_rate": 98.63
+      },
+      "Neutral": {
+        "pnl": 57368.78,
+        "count": 2011,
+        "win_rate": 100.0
+      },
+      "Greed": {
+        "pnl": 4.67,
+        "count": 3,
+        "win_rate": 33.33
+      }
+    }
+  },
+  {
+    "account": "0xb1231a4a...bfed23",
+    "total_pnl": 725029.64,
+    "trade_count": 5227,
+    "win_rate": 78.21,
+    "total_volume": 26236921.92,
+    "best_trade": 48504.1,
+    "worst_trade": -5028.07,
+    "favorite_sentiment": "Greed",
+    "favorite_coin": "HYPE",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 10598.2,
+        "count": 355,
+        "win_rate": 63.38
+      },
+      "Fear": {
+        "pnl": 91422.45,
+        "count": 913,
+        "win_rate": 99.34
+      },
+      "Neutral": {
+        "pnl": 402158.1,
+        "count": 1390,
+        "win_rate": 93.24
+      },
+      "Greed": {
+        "pnl": 173492.51,
+        "count": 2211,
+        "win_rate": 61.37
+      },
+      "Extreme Greed": {
+        "pnl": 47358.39,
+        "count": 358,
+        "win_rate": 84.64
+      }
+    }
+  },
+  {
+    "account": "0x4acb90e7...ffb9f4",
+    "total_pnl": 685324.32,
+    "trade_count": 2224,
+    "win_rate": 95.23,
+    "total_volume": 20105706.78,
+    "best_trade": 16305.58,
+    "worst_trade": -1053.25,
+    "favorite_sentiment": "Greed",
+    "favorite_coin": "SOL",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 166696.4,
+        "count": 311,
+        "win_rate": 98.07
+      },
+      "Fear": {
+        "pnl": 296781.72,
+        "count": 599,
+        "win_rate": 95.33
+      },
+      "Neutral": {
+        "pnl": 97380.09,
+        "count": 506,
+        "win_rate": 100.0
+      },
+      "Greed": {
+        "pnl": 103970.05,
+        "count": 712,
+        "win_rate": 94.94
+      },
+      "Extreme Greed": {
+        "pnl": 20496.05,
+        "count": 96,
+        "win_rate": 62.5
+      }
+    }
+  },
+  {
+    "account": "0x513b8629...9c4ff1",
+    "total_pnl": 664245.39,
+    "trade_count": 5047,
+    "win_rate": 88.05,
+    "total_volume": 209246886.37,
+    "best_trade": 19530.52,
+    "worst_trade": -29370.12,
+    "favorite_sentiment": "Fear",
+    "favorite_coin": "BTC",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": -53379.6,
+        "count": 156,
+        "win_rate": 67.31
+      },
+      "Fear": {
+        "pnl": 367745.91,
+        "count": 2573,
+        "win_rate": 86.09
+      },
+      "Neutral": {
+        "pnl": 186831.42,
+        "count": 979,
+        "win_rate": 95.1
+      },
+      "Greed": {
+        "pnl": 163047.66,
+        "count": 1339,
+        "win_rate": 89.1
+      }
+    }
+  },
+  {
+    "account": "0x72743ae2...b2afbd",
+    "total_pnl": 427124.26,
+    "trade_count": 687,
+    "win_rate": 72.78,
+    "total_volume": 5267575.29,
+    "best_trade": 74530.52,
+    "worst_trade": -35681.75,
+    "favorite_sentiment": "Extreme Fear",
+    "favorite_coin": "ETH",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 33980.0,
+        "count": 312,
+        "win_rate": 100.0
+      },
+      "Fear": {
+        "pnl": -60451.06,
+        "count": 106,
+        "win_rate": 0.0
+      },
+      "Greed": {
+        "pnl": 453595.32,
+        "count": 269,
+        "win_rate": 69.89
+      }
+    }
+  },
+  {
+    "account": "0x75f7eeb8...1170d4",
+    "total_pnl": 373093.51,
+    "trade_count": 8637,
+    "win_rate": 92.5,
+    "total_volume": 12724297.27,
+    "best_trade": 5949.81,
+    "worst_trade": -5843.04,
+    "favorite_sentiment": "Extreme Greed",
+    "favorite_coin": "JELLY",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 25672.84,
+        "count": 291,
+        "win_rate": 99.31
+      },
+      "Fear": {
+        "pnl": 49364.28,
+        "count": 1502,
+        "win_rate": 86.35
+      },
+      "Neutral": {
+        "pnl": -3466.79,
+        "count": 1201,
+        "win_rate": 86.93
+      },
+      "Greed": {
+        "pnl": 91764.17,
+        "count": 2224,
+        "win_rate": 94.38
+      },
+      "Extreme Greed": {
+        "pnl": 209759.01,
+        "count": 3419,
+        "win_rate": 95.35
+      }
+    }
+  },
+  {
+    "account": "0x72c6a462...f892a0",
+    "total_pnl": 359965.92,
+    "trade_count": 557,
+    "win_rate": 77.38,
+    "total_volume": 1186474.72,
+    "best_trade": 27223.74,
+    "worst_trade": -3968.95,
+    "favorite_sentiment": "Fear",
+    "favorite_coin": "HYPE",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 198900.56,
+        "count": 187,
+        "win_rate": 49.73
+      },
+      "Fear": {
+        "pnl": 144514.34,
+        "count": 305,
+        "win_rate": 91.15
+      },
+      "Neutral": {
+        "pnl": -4526.7,
+        "count": 5,
+        "win_rate": 0.0
+      },
+      "Greed": {
+        "pnl": 21077.72,
+        "count": 60,
+        "win_rate": 100.0
+      }
+    }
+  },
+  {
+    "account": "0x4f93fead...e9f760",
+    "total_pnl": 308582.1,
+    "trade_count": 2948,
+    "win_rate": 92.67,
+    "total_volume": 64809838.24,
+    "best_trade": 8098.27,
+    "worst_trade": -21524.4,
+    "favorite_sentiment": "Extreme Greed",
+    "favorite_coin": "BTC",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 74346.55,
+        "count": 159,
+        "win_rate": 100.0
+      },
+      "Fear": {
+        "pnl": -19126.16,
+        "count": 477,
+        "win_rate": 86.16
+      },
+      "Neutral": {
+        "pnl": 45514.32,
+        "count": 574,
+        "win_rate": 94.95
+      },
+      "Greed": {
+        "pnl": 78629.7,
+        "count": 848,
+        "win_rate": 94.46
+      },
+      "Extreme Greed": {
+        "pnl": 129217.69,
+        "count": 890,
+        "win_rate": 91.69
+      }
+    }
+  },
+  {
+    "account": "0xbd5fead7...ddb5c3",
+    "total_pnl": 245884.81,
+    "trade_count": 1138,
+    "win_rate": 74.52,
+    "total_volume": 9822468.04,
+    "best_trade": 32783.53,
+    "worst_trade": -24500.0,
+    "favorite_sentiment": "Fear",
+    "favorite_coin": "BTC",
+    "performance_by_sentiment": {
+      "Extreme Fear": {
+        "pnl": 31586.44,
+        "count": 165,
+        "win_rate": 55.15
+      },
+      "Fear": {
+        "pnl": 267441.76,
+        "count": 670,
+        "win_rate": 86.42
+      },
+      "Neutral": {
+        "pnl": -89455.04,
+        "count": 147,
+        "win_rate": 45.58
+      },
+      "Greed": {
+        "pnl": 30258.49,
+        "count": 99,
+        "win_rate": 85.86
+      },
+      "Extreme Greed": {
+        "pnl": 6053.16,
+        "count": 57,
+        "win_rate": 45.61
+      }
+    }
+  }
+]

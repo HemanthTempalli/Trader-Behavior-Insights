@@ -1,0 +1,52 @@
+{
+  "Extreme Fear": {
+    "long_count": 6241,
+    "short_count": 3117,
+    "long_total_pnl": 506752.79,
+    "short_total_pnl": 384638.54,
+    "long_mean_pnl": 81.1974,
+    "short_mean_pnl": 123.4002,
+    "long_win_rate": 84.65,
+    "short_win_rate": 70.58
+  },
+  "Fear": {
+    "long_count": 17260,
+    "short_count": 9221,
+    "long_total_pnl": 1432581.92,
+    "short_total_pnl": 1914986.46,
+    "long_mean_pnl": 83.0001,
+    "short_mean_pnl": 207.6767,
+    "long_win_rate": 89.89,
+    "short_win_rate": 86.16
+  },
+  "Neutral": {
+    "long_count": 9993,
+    "short_count": 5850,
+    "long_total_pnl": 527788.16,
+    "short_total_pnl": 554558.43,
+    "long_mean_pnl": 52.8158,
+    "short_mean_pnl": 94.7963,
+    "long_win_rate": 86.13,
+    "short_win_rate": 77.66
+  },
+  "Greed": {
+    "long_count": 7998,
+    "short_count": 11322,
+    "long_total_pnl": 711490.52,
+    "short_total_pnl": 624923.4,
+    "long_mean_pnl": 88.9586,
+    "short_mean_pnl": 55.1955,
+    "long_win_rate": 86.3,
+    "short_win_rate": 68.86
+  },
+  "Extreme Greed": {
+    "long_count": 7186,
+    "short_count": 6497,
+    "long_total_pnl": 444316.0,
+    "short_total_pnl": 188221.27,
+    "long_mean_pnl": 61.8308,
+    "short_mean_pnl": 28.9705,
+    "long_win_rate": 88.77,
+    "short_win_rate": 85.86
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "account": "0x8170715b...a0a63b",
+    "total_pnl": -155996.61,
+    "trade_count": 2326,
+    "win_rate": 75.37,
+    "total_volume": 5297341.38,
+    "favorite_sentiment": "Greed"
+  },
+  {
+    "account": "0x271b2809...e622ab",
+    "total_pnl": -72023.32,
+    "trade_count": 1597,
+    "win_rate": 71.38,
+    "total_volume": 16962497.51,
+    "favorite_sentiment": "Fear"
+  },
+  {
+    "account": "0xa520ded0...2c00e0",
+    "total_pnl": -14392.15,
+    "trade_count": 6,
+    "win_rate": 33.33,
+    "total_volume": 136814.89,
+    "favorite_sentiment": "Fear"
+  },
+  {
+    "account": "0x6d6a4b95...18264a",
+    "total_pnl": 2663.87,
+    "trade_count": 102,
+    "win_rate": 95.1,
+    "total_volume": 142048.93,
+    "favorite_sentiment": "Fear"
+  },
+  {
+    "account": "0x3998f134...bce891",
+    "total_pnl": 3930.38,
+    "trade_count": 92,
+    "win_rate": 77.17,
+    "total_volume": 212133.86,
+    "favorite_sentiment": "Fear"
+  },
+  {
+    "account": "0x7f4f299f...b9db8f",
+    "total_pnl": 6617.33,
+    "trade_count": 696,
+    "win_rate": 94.4,
+    "total_volume": 2723176.01,
+    "favorite_sentiment": "Extreme Fear"
+  },
+  {
+    "account": "0x3f9a0aad...486cf6",
+    "total_pnl": 7612.62,
+    "trade_count": 79,
+    "win_rate": 100.0,
+    "total_volume": 179938.07,
+    "favorite_sentiment": "Extreme Greed"
+  },
+  {
+    "account": "0x23e7a7f8...5ba5bd",
+    "total_pnl": 9217.04,
+    "trade_count": 1422,
+    "win_rate": 86.71,
+    "total_volume": 2866391.51,
+    "favorite_sentiment": "Greed"
+  },
+  {
+    "account": "0x28736f43...5d72c4",
+    "total_pnl": 13187.63,
+    "trade_count": 5297,
+    "win_rate": 84.52,
+    "total_volume": 3113400.63,
+    "favorite_sentiment": "Extreme Greed"
+  },
+  {
+    "account": "0x8477e447...fd9cb5",
+    "total_pnl": 21244.07,
+    "trade_count": 6497,
+    "win_rate": 59.54,
+    "total_volume": 6094530.76,
+    "favorite_sentiment": "Greed"
+  }
+]

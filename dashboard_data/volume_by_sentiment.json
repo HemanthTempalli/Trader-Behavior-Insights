@@ -1,0 +1,37 @@
+{
+  "Extreme Fear": {
+    "total_volume_usd": 114484261.44,
+    "avg_trade_size_usd": 5349.73,
+    "trade_count": 21400,
+    "unique_traders": 32,
+    "unique_coins": 85
+  },
+  "Fear": {
+    "total_volume_usd": 483324789.79,
+    "avg_trade_size_usd": 7816.11,
+    "trade_count": 61837,
+    "unique_traders": 32,
+    "unique_coins": 134
+  },
+  "Neutral": {
+    "total_volume_usd": 180242063.08,
+    "avg_trade_size_usd": 4782.73,
+    "trade_count": 37686,
+    "unique_traders": 31,
+    "unique_coins": 147
+  },
+  "Greed": {
+    "total_volume_usd": 288582494.72,
+    "avg_trade_size_usd": 5736.88,
+    "trade_count": 50303,
+    "unique_traders": 31,
+    "unique_coins": 193
+  },
+  "Extreme Greed": {
+    "total_volume_usd": 124465164.57,
+    "avg_trade_size_usd": 3112.25,
+    "trade_count": 39992,
+    "unique_traders": 30,
+    "unique_coins": 165
+  }
+}

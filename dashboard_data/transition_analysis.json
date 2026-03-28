@@ -1,0 +1,92 @@
+[
+  {
+    "transition": "Fear \u2192 Greed",
+    "avg_pnl": 407622.93166099995,
+    "total_pnl": 407622.93166099995,
+    "occurrences": 1
+  },
+  {
+    "transition": "Greed \u2192 Fear",
+    "avg_pnl": 167645.343331,
+    "total_pnl": 335290.686662,
+    "occurrences": 2
+  },
+  {
+    "transition": "Extreme Fear \u2192 Fear",
+    "avg_pnl": 129977.21405325,
+    "total_pnl": 519908.856213,
+    "occurrences": 4
+  },
+  {
+    "transition": "Fear \u2192 Extreme Fear",
+    "avg_pnl": 85096.362767,
+    "total_pnl": 340385.451068,
+    "occurrences": 4
+  },
+  {
+    "transition": "Extreme Fear \u2192 Extreme Fear",
+    "avg_pnl": 78715.126013,
+    "total_pnl": 551005.882091,
+    "occurrences": 7
+  },
+  {
+    "transition": "Neutral \u2192 Fear",
+    "avg_pnl": 43567.054603181816,
+    "total_pnl": 479237.600635,
+    "occurrences": 11
+  },
+  {
+    "transition": "Fear \u2192 Neutral",
+    "avg_pnl": 40498.29813330769,
+    "total_pnl": 526477.875733,
+    "occurrences": 13
+  },
+  {
+    "transition": "Fear \u2192 Fear",
+    "avg_pnl": 37983.60823150943,
+    "total_pnl": 2013131.23627,
+    "occurrences": 53
+  },
+  {
+    "transition": "Extreme Fear \u2192 Neutral",
+    "avg_pnl": 18082.071276,
+    "total_pnl": 18082.071276,
+    "occurrences": 1
+  },
+  {
+    "transition": "Neutral \u2192 Neutral",
+    "avg_pnl": 13510.216035250001,
+    "total_pnl": 378286.048987,
+    "occurrences": 28
+  },
+  {
+    "transition": "Greed \u2192 Neutral",
+    "avg_pnl": 13291.716341583335,
+    "total_pnl": 159500.59609900002,
+    "occurrences": 12
+  },
+  {
+    "transition": "Greed \u2192 Greed",
+    "avg_pnl": 7200.420792886363,
+    "total_pnl": 950455.544661,
+    "occurrences": 132
+  },
+  {
+    "transition": "Extreme Greed \u2192 Greed",
+    "avg_pnl": 6649.710281000001,
+    "total_pnl": 152943.336463,
+    "occurrences": 23
+  },
+  {
+    "transition": "Extreme Greed \u2192 Extreme Greed",
+    "avg_pnl": 5939.88415405814,
+    "total_pnl": 510830.037249,
+    "occurrences": 86
+  },
+  {
+    "transition": "Greed \u2192 Extreme Greed",
+    "avg_pnl": 5532.147131727273,
+    "total_pnl": 121707.236898,
+    "occurrences": 22
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "total_trades": 211218,
+  "closed_trades": 84685,
+  "unique_traders": 32,
+  "unique_coins": 246,
+  "date_range": "May 01, 2023 \u2013 May 01, 2025",
+  "total_volume_usd": 1191098773.6,
+  "total_pnl": 7290257.5,
+  "overall_win_rate": 83.54,
+  "avg_sentiment": 60.1,
+  "total_fees": 245849.21
+}

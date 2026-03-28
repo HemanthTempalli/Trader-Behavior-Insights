@@ -1,0 +1,413 @@
+{
+  "HYPE": {
+    "total_trades": 31985,
+    "total_pnl": 1948061.88,
+    "win_rate": 88.15,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 4759,
+        "total_pnl": 482083.78,
+        "win_rate": 85.67
+      },
+      "Fear": {
+        "count": 13533,
+        "total_pnl": 840304.7,
+        "win_rate": 89.65
+      },
+      "Neutral": {
+        "count": 8525,
+        "total_pnl": 299735.48,
+        "win_rate": 83.81
+      },
+      "Greed": {
+        "count": 2763,
+        "total_pnl": 166251.36,
+        "win_rate": 90.77
+      },
+      "Extreme Greed": {
+        "count": 2405,
+        "total_pnl": 159686.56,
+        "win_rate": 97.01
+      }
+    }
+  },
+  "BTC": {
+    "total_trades": 11026,
+    "total_pnl": 886294.85,
+    "win_rate": 82.82,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 665,
+        "total_pnl": 19664.91,
+        "win_rate": 81.5
+      },
+      "Fear": {
+        "count": 4335,
+        "total_pnl": 484406.7,
+        "win_rate": 87.7
+      },
+      "Neutral": {
+        "count": 1811,
+        "total_pnl": 165973.42,
+        "win_rate": 86.25
+      },
+      "Greed": {
+        "count": 3237,
+        "total_pnl": 115366.83,
+        "win_rate": 74.08
+      },
+      "Extreme Greed": {
+        "count": 978,
+        "total_pnl": 100882.98,
+        "win_rate": 84.66
+      }
+    }
+  },
+  "ETH": {
+    "total_trades": 5205,
+    "total_pnl": 1314431.63,
+    "win_rate": 76.87,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 783,
+        "total_pnl": 269452.86,
+        "win_rate": 98.98
+      },
+      "Fear": {
+        "count": 1425,
+        "total_pnl": 674001.07,
+        "win_rate": 83.23
+      },
+      "Neutral": {
+        "count": 741,
+        "total_pnl": 62375.66,
+        "win_rate": 81.65
+      },
+      "Greed": {
+        "count": 1545,
+        "total_pnl": 350631.63,
+        "win_rate": 59.55
+      },
+      "Extreme Greed": {
+        "count": 711,
+        "total_pnl": -42029.59,
+        "win_rate": 72.43
+      }
+    }
+  },
+  "SOL": {
+    "total_trades": 5016,
+    "total_pnl": 1628228.43,
+    "win_rate": 83.85,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 863,
+        "total_pnl": 105179.5,
+        "win_rate": 67.9
+      },
+      "Fear": {
+        "count": 2058,
+        "total_pnl": 730318.14,
+        "win_rate": 95.0
+      },
+      "Neutral": {
+        "count": 809,
+        "total_pnl": 303343.59,
+        "win_rate": 90.11
+      },
+      "Greed": {
+        "count": 506,
+        "total_pnl": 451680.23,
+        "win_rate": 89.72
+      },
+      "Extreme Greed": {
+        "count": 780,
+        "total_pnl": 37706.97,
+        "win_rate": 61.79
+      }
+    }
+  },
+  "FARTCOIN": {
+    "total_trades": 2162,
+    "total_pnl": -100803.7,
+    "win_rate": 70.54,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 329,
+        "total_pnl": -138014.11,
+        "win_rate": 15.81
+      },
+      "Fear": {
+        "count": 433,
+        "total_pnl": -10811.78,
+        "win_rate": 70.44
+      },
+      "Neutral": {
+        "count": 124,
+        "total_pnl": -1621.81,
+        "win_rate": 75.81
+      },
+      "Greed": {
+        "count": 1076,
+        "total_pnl": 41251.23,
+        "win_rate": 81.78
+      },
+      "Extreme Greed": {
+        "count": 200,
+        "total_pnl": 8392.77,
+        "win_rate": 97.0
+      }
+    }
+  },
+  "MELANIA": {
+    "total_trades": 2209,
+    "total_pnl": 389131.01,
+    "win_rate": 88.91,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 350,
+        "total_pnl": 97379.17,
+        "win_rate": 100.0
+      },
+      "Fear": {
+        "count": 593,
+        "total_pnl": 195629.07,
+        "win_rate": 99.49
+      },
+      "Neutral": {
+        "count": 100,
+        "total_pnl": 41298.45,
+        "win_rate": 99.0
+      },
+      "Greed": {
+        "count": 1017,
+        "total_pnl": 73550.5,
+        "win_rate": 83.58
+      },
+      "Extreme Greed": {
+        "count": 149,
+        "total_pnl": -18726.17,
+        "win_rate": 50.34
+      }
+    }
+  },
+  "WLD": {
+    "total_trades": 940,
+    "total_pnl": 22281.92,
+    "win_rate": 75.64,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 1,
+        "total_pnl": 48.74,
+        "win_rate": 100.0
+      },
+      "Fear": {
+        "count": 34,
+        "total_pnl": 1372.98,
+        "win_rate": 97.06
+      },
+      "Neutral": {
+        "count": 86,
+        "total_pnl": -4049.55,
+        "win_rate": 52.33
+      },
+      "Greed": {
+        "count": 541,
+        "total_pnl": 8147.25,
+        "win_rate": 67.65
+      },
+      "Extreme Greed": {
+        "count": 278,
+        "total_pnl": 16762.5,
+        "win_rate": 95.68
+      }
+    }
+  },
+  "SUI": {
+    "total_trades": 890,
+    "total_pnl": 199158.32,
+    "win_rate": 93.93,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 160,
+        "total_pnl": 44782.47,
+        "win_rate": 94.38
+      },
+      "Fear": {
+        "count": 121,
+        "total_pnl": 26044.68,
+        "win_rate": 88.43
+      },
+      "Neutral": {
+        "count": 70,
+        "total_pnl": 3459.36,
+        "win_rate": 97.14
+      },
+      "Greed": {
+        "count": 304,
+        "total_pnl": 101619.03,
+        "win_rate": 96.71
+      },
+      "Extreme Greed": {
+        "count": 235,
+        "total_pnl": 23252.77,
+        "win_rate": 91.91
+      }
+    }
+  },
+  "TRUMP": {
+    "total_trades": 958,
+    "total_pnl": -352072.0,
+    "win_rate": 70.04,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 75,
+        "total_pnl": 31638.04,
+        "win_rate": 98.67
+      },
+      "Fear": {
+        "count": 133,
+        "total_pnl": 18920.46,
+        "win_rate": 93.98
+      },
+      "Neutral": {
+        "count": 169,
+        "total_pnl": 20121.15,
+        "win_rate": 100.0
+      },
+      "Greed": {
+        "count": 368,
+        "total_pnl": -420161.92,
+        "win_rate": 39.67
+      },
+      "Extreme Greed": {
+        "count": 213,
+        "total_pnl": -2589.73,
+        "win_rate": 73.71
+      }
+    }
+  },
+  "XRP": {
+    "total_trades": 872,
+    "total_pnl": 3716.48,
+    "win_rate": 65.37,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 396,
+        "total_pnl": -11995.49,
+        "win_rate": 34.6
+      },
+      "Fear": {
+        "count": 192,
+        "total_pnl": 14977.16,
+        "win_rate": 98.44
+      },
+      "Neutral": {
+        "count": 2,
+        "total_pnl": 37.59,
+        "win_rate": 100.0
+      },
+      "Greed": {
+        "count": 77,
+        "total_pnl": 768.39,
+        "win_rate": 92.21
+      },
+      "Extreme Greed": {
+        "count": 205,
+        "total_pnl": -71.17,
+        "win_rate": 83.41
+      }
+    }
+  },
+  "kPEPE": {
+    "total_trades": 1035,
+    "total_pnl": 18677.0,
+    "win_rate": 47.63,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 1,
+        "total_pnl": 2.77,
+        "win_rate": 100.0
+      },
+      "Fear": {
+        "count": 70,
+        "total_pnl": 4844.86,
+        "win_rate": 88.57
+      },
+      "Neutral": {
+        "count": 57,
+        "total_pnl": -152.16,
+        "win_rate": 7.02
+      },
+      "Greed": {
+        "count": 352,
+        "total_pnl": -6949.14,
+        "win_rate": 11.93
+      },
+      "Extreme Greed": {
+        "count": 555,
+        "total_pnl": 20930.68,
+        "win_rate": 69.19
+      }
+    }
+  },
+  "kBONK": {
+    "total_trades": 1164,
+    "total_pnl": 34759.43,
+    "win_rate": 52.75,
+    "by_sentiment": {
+      "Fear": {
+        "count": 21,
+        "total_pnl": 742.1,
+        "win_rate": 100.0
+      },
+      "Neutral": {
+        "count": 43,
+        "total_pnl": 130.05,
+        "win_rate": 65.12
+      },
+      "Greed": {
+        "count": 570,
+        "total_pnl": -2021.4,
+        "win_rate": 10.18
+      },
+      "Extreme Greed": {
+        "count": 530,
+        "total_pnl": 35908.68,
+        "win_rate": 95.66
+      }
+    }
+  },
+  "FTT": {
+    "total_trades": 634,
+    "total_pnl": 6903.32,
+    "win_rate": 84.23,
+    "by_sentiment": {
+      "Extreme Fear": {
+        "count": 13,
+        "total_pnl": 854.61,
+        "win_rate": 100.0
+      },
+      "Fear": {
+        "count": 19,
+        "total_pnl": 1253.44,
+        "win_rate": 100.0
+      },
+      "Neutral": {
+        "count": 35,
+        "total_pnl": 917.57,
+        "win_rate": 100.0
+      },
+      "Greed": {
+        "count": 355,
+        "total_pnl": 2282.89,
+        "win_rate": 85.63
+      },
+      "Extreme Greed": {
+        "count": 212,
+        "total_pnl": 1594.81,
+        "win_rate": 76.89
+      }
+    }
+  }
+}

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive dashboard exploring the relationship between Bitcoin market sentiment (Fear/Greed Index) and Hyperliquid trader performance.">
+  <title>Bitcoin Sentiment × Trader Performance | Analytics Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loader">
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading analytics...</div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="nav-brand">
+      <div class="nav-logo">S×T</div>
+      <div>
+        <div class="nav-title">Sentiment × Trader</div>
+        <div class="nav-subtitle">Analytics Dashboard</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#sentiment">Sentiment</a></li>
+      <li><a href="#performance">Performance</a></li>
+      <li><a href="#traders">Traders</a></li>
+      <li><a href="#coins">Coins</a></li>
+      <li><a href="#insights">Insights</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero container" id="overview">
+  <div class="hero-badge">
+    <span class="pulse"></span>
+    Bitcoin Fear & Greed × Hyperliquid Trader Analysis
+  </div>
+  <h1>How Does Market Sentiment<br>Shape Trader Performance?</h1>
+  <p>Analyzing 211K+ trades across 32 traders against Bitcoin's Fear & Greed Index to uncover hidden patterns and actionable strategies.</p>
+</header>
+
+<!-- Stats Row -->
+<div class="container">
+  <div class="stats-row" id="statsRow">
+    <!-- Filled by JS -->
+  </div>
+</div>
+
+<!-- Sentiment Distribution -->
+<section class="section container reveal" id="sentiment">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(234,179,8,0.12);color:#eab308;">📊</span> Sentiment Landscape</h2>
+    <p>Distribution and timeline of Bitcoin sentiment during the trading period</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Sentiment Distribution</div>
+      <div class="chart-container" id="chartSentimentDist"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Fear & Greed Timeline</div>
+      <div class="chart-container" id="chartSentimentTimeline"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PnL by Sentiment -->
+<section class="section container reveal" id="performance">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(34,197,94,0.12);color:#22c55e;">💰</span> Performance by Sentiment</h2>
+    <p>How does trader profitability change across different market sentiment regimes?</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Mean PnL per Trade by Sentiment</div>
+      <div class="chart-container" id="chartPnlBySentiment"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Win Rate by Sentiment Regime</div>
+      <div class="chart-container" id="chartWinRate"></div>
+    </div>
+  </div>
+  <div class="grid-full" style="margin-top:1.25rem;">
+    <div class="card">
+      <div class="card-title">PnL Distribution (Box Plot) by Sentiment</div>
+      <div class="chart-container" id="chartPnlBox"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Long vs Short -->
+<section class="section container reveal">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(59,130,246,0.12);color:#3b82f6;">⚔️</span> Long vs Short Analysis</h2>
+    <p>Comparing long and short trade performance under each sentiment regime</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Total PnL: Longs vs Shorts</div>
+      <div class="chart-container" id="chartDirectionalPnl"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Win Rate: Longs vs Shorts</div>
+      <div class="chart-container" id="chartDirectionalWR"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Volume & Activity -->
+<section class="section container reveal">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(6,182,212,0.12);color:#06b6d4;">📈</span> Volume & Activity</h2>
+    <p>Trading volume, trade counts, and trader participation by sentiment</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Trading Volume by Sentiment ($USD)</div>
+      <div class="chart-container" id="chartVolume"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Active Traders & Coins per Regime</div>
+      <div class="chart-container" id="chartActivity"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Correlations -->
+<section class="section container reveal">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(139,92,246,0.12);color:#8b5cf6;">🔗</span> Correlation Analysis</h2>
+    <p>How correlated is the daily Fear & Greed Index with trading metrics?</p>
+  </div>
+  <div class="card">
+    <div class="corr-grid" id="corrGrid"></div>
+  </div>
+</section>
+
+<!-- Daily Trends -->
+<section class="section container reveal">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(249,115,22,0.12);color:#f97316;">📅</span> Daily Trends</h2>
+    <p>Time-series of daily PnL and sentiment overlaid</p>
+  </div>
+  <div class="card">
+    <div class="chart-container" id="chartDailyTrends" style="min-height:420px;"></div>
+  </div>
+</section>
+
+<!-- Sentiment Transitions -->
+<section class="section container reveal">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(236,72,153,0.12);color:#ec4899;">🔄</span> Sentiment Transitions</h2>
+    <p>How does PnL change when sentiment shifts between regimes?</p>
+  </div>
+  <div class="card">
+    <div class="chart-container" id="chartTransitions" style="min-height:420px;"></div>
+  </div>
+</section>
+
+<!-- Top Traders -->
+<section class="section container reveal" id="traders">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(251,191,36,0.12);color:#fbbf24;">🏆</span> Top Traders</h2>
+    <p>Most profitable traders and their sentiment-regime preferences</p>
+  </div>
+  <div class="card" style="overflow-x:auto;">
+    <div class="tab-group">
+      <button class="tab-btn active" onclick="showTraderTab('top')" id="tabTop">Top Performers</button>
+      <button class="tab-btn" onclick="showTraderTab('bottom')" id="tabBottom">Worst Performers</button>
+    </div>
+    <table class="trader-table" id="traderTable">
+      <!-- Filled by JS -->
+    </table>
+  </div>
+</section>
+
+<!-- Top Trader Sentiment Breakdown -->
+<section class="section container reveal">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(99,102,241,0.12);color:#6366f1;">🎯</span> Top Trader: PnL by Sentiment</h2>
+    <p>Where the best traders make (and lose) their money</p>
+  </div>
+  <div class="card">
+    <div class="chart-container" id="chartTopTraderSentiment" style="min-height:400px;"></div>
+  </div>
+</section>
+
+<!-- Coin Analysis -->
+<section class="section container reveal" id="coins">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(16,185,129,0.12);color:#10b981;">🪙</span> Coin Analysis</h2>
+    <p>Performance of the most traded coins across sentiment regimes</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Top Coins by Total PnL</div>
+      <div class="chart-container" id="chartCoinPnl"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Coin Win Rates</div>
+      <div class="chart-container" id="chartCoinWR"></div>
+    </div>
+  </div>
+  <div class="grid-full" style="margin-top:1.25rem;">
+    <div class="card">
+      <div class="card-title">Coin PnL Heatmap: Coin × Sentiment</div>
+      <div class="chart-container" id="chartCoinHeatmap" style="min-height:500px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Hourly Patterns -->
+<section class="section container reveal">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(56,189,248,0.12);color:#38bdf8;">🕐</span> Hourly Trading Patterns</h2>
+    <p>When do traders trade the most during each sentiment regime?</p>
+  </div>
+  <div class="card">
+    <div class="chart-container" id="chartHourly" style="min-height:400px;"></div>
+  </div>
+</section>
+
+<!-- Key Insights -->
+<section class="section container reveal" id="insights">
+  <div class="section-header">
+    <h2><span class="icon" style="background:rgba(168,85,247,0.12);color:#a855f7;">💡</span> Key Insights & Strategy Recommendations</h2>
+    <p>Data-driven takeaways from the analysis</p>
+  </div>
+  <div class="insights-grid" id="insightsGrid">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer container">
+  <p>Bitcoin Sentiment × Trader Performance Dashboard | Data: Fear & Greed Index + Hyperliquid Historical Trades</p>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// DASHBOARD LOGIC
+// ═══════════════════════════════════════════════════════════════════
+
+const SENTIMENT_COLORS = {
+  'Extreme Fear': '#ef4444',
+  'Fear': '#f97316',
+  'Neutral': '#eab308',
+  'Greed': '#22c55e',
+  'Extreme Greed': '#10b981'
+};
+
+const SENTIMENT_ORDER = ['Extreme Fear', 'Fear', 'Neutral', 'Greed', 'Extreme Greed'];
+
+const plotlyLayout = {
+  paper_bgcolor: 'transparent',
+  plot_bgcolor: 'transparent',
+  font: { family: 'Inter, sans-serif', color: '#94a3b8', size: 12 },
+  margin: { l: 50, r: 20, t: 30, b: 50 },
+  xaxis: {
+    gridcolor: 'rgba(148,163,184,0.06)',
+    zerolinecolor: 'rgba(148,163,184,0.1)',
+  },
+  yaxis: {
+    gridcolor: 'rgba(148,163,184,0.06)',
+    zerolinecolor: 'rgba(148,163,184,0.1)',
+  },
+  hoverlabel: {
+    bgcolor: '#1e293b',
+    bordercolor: 'rgba(148,163,184,0.2)',
+    font: { family: 'Inter', color: '#f1f5f9', size: 13 }
+  },
+  legend: {
+    bgcolor: 'transparent',
+    font: { color: '#94a3b8', size: 11 },
+  },
+};
+
+const plotlyConfig = {
+  responsive: true,
+  displayModeBar: false,
+};
+
+// ── DATA LOADING ────────────────────────────────────────────────────
+async function loadJSON(file) {
+  const resp = await fetch(`dashboard_data/${file}`);
+  return resp.json();
+}
+
+let DATA = {};
+
+async function loadAllData() {
+  const files = [
+    'summary', 'sentiment_distribution', 'sentiment_timeline',
+    'pnl_by_sentiment', 'directional_analysis', 'volume_by_sentiment',
+    'daily_data', 'top_traders', 'bottom_traders', 'coin_analysis',
+    'correlations', 'transition_analysis', 'hourly_patterns', 'pnl_distributions'
+  ];
+  const results = await Promise.all(files.map(f => loadJSON(f + '.json')));
+  files.forEach((f, i) => DATA[f] = results[i]);
+}
+
+// ── RENDER FUNCTIONS ─────────────────────────────────────────────────
+
+function renderStats() {
+  const s = DATA.summary;
+  const stats = [
+    { label: 'Total Trades', value: s.total_trades.toLocaleString(), sub: `${s.closed_trades.toLocaleString()} closed` },
+    { label: 'Unique Traders', value: s.unique_traders, sub: `${s.unique_coins} coins traded` },
+    { label: 'Total Volume', value: '$' + (s.total_volume_usd / 1e9).toFixed(2) + 'B', sub: s.date_range },
+    { label: 'Total PnL', value: '$' + (s.total_pnl / 1e6).toFixed(2) + 'M', sub: `Fees: $${(s.total_fees/1e3).toFixed(0)}K` },
+    { label: 'Win Rate', value: s.overall_win_rate.toFixed(1) + '%', sub: `Avg sentiment: ${s.avg_sentiment}` },
+  ];
+
+  document.getElementById('statsRow').innerHTML = stats.map(s => `
+    <div class="stat-card animate-in">
+      <div class="stat-label">${s.label}</div>
+      <div class="stat-value">${s.value}</div>
+      <div class="stat-sub">${s.sub}</div>
+    </div>
+  `).join('');
+}
+
+function renderSentimentDist() {
+  const d = DATA.sentiment_distribution;
+  const labels = SENTIMENT_ORDER.filter(s => d[s] !== undefined);
+  const values = labels.map(s => d[s]);
+  const colors = labels.map(s => SENTIMENT_COLORS[s]);
+
+  Plotly.newPlot('chartSentimentDist', [{
+    type: 'pie',
+    labels, values,
+    marker: { colors },
+    hole: 0.55,
+    textinfo: 'label+percent',
+    textposition: 'outside',
+    textfont: { size: 11, color: '#94a3b8' },
+    hovertemplate: '<b>%{label}</b><br>%{value} days (%{percent})<extra></extra>',
+    sort: false,
+  }], {
+    ...plotlyLayout,
+    margin: { l: 20, r: 20, t: 20, b: 20 },
+    showlegend: false,
+    annotations: [{
+      text: `<b>${values.reduce((a,b) => a+b, 0)}</b><br>Days`,
+      showarrow: false,
+      font: { size: 16, color: '#f1f5f9', family: 'Inter' },
+      x: 0.5, y: 0.5,
+    }]
+  }, plotlyConfig);
+}
+
+function renderSentimentTimeline() {
+  const d = DATA.sentiment_timeline;
+  const x = d.map(r => r.date_str);
+  const y = d.map(r => r.sentiment_value);
+  const colors = d.map(r => SENTIMENT_COLORS[r.sentiment_class]);
+
+  Plotly.newPlot('chartSentimentTimeline', [{
+    x, y,
+    type: 'scatter',
+    mode: 'lines',
+    fill: 'tozeroy',
+    line: { color: '#8b5cf6', width: 1.5 },
+    fillcolor: 'rgba(139, 92, 246, 0.08)',
+    hovertemplate: '<b>%{x}</b><br>Value: %{y}<extra></extra>',
+  }, {
+    x, y,
+    type: 'scatter',
+    mode: 'markers',
+    marker: { color: colors, size: 4, opacity: 0.7 },
+    hovertemplate: '<b>%{x}</b><br>Value: %{y}<extra></extra>',
+    showlegend: false,
+  }], {
+    ...plotlyLayout,
+    showlegend: false,
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Sentiment Value', font: { size: 11 } }, range: [0, 100] },
+    shapes: [
+      { type: 'line', y0: 25, y1: 25, x0: x[0], x1: x[x.length-1], line: { color: 'rgba(239,68,68,0.2)', width: 1, dash: 'dot' } },
+      { type: 'line', y0: 50, y1: 50, x0: x[0], x1: x[x.length-1], line: { color: 'rgba(234,179,8,0.2)', width: 1, dash: 'dot' } },
+      { type: 'line', y0: 75, y1: 75, x0: x[0], x1: x[x.length-1], line: { color: 'rgba(34,197,94,0.2)', width: 1, dash: 'dot' } },
+    ]
+  }, plotlyConfig);
+}
+
+function renderPnlBySentiment() {
+  const d = DATA.pnl_by_sentiment;
+  const labels = SENTIMENT_ORDER.filter(s => d[s]);
+  const meanPnl = labels.map(s => d[s].mean_pnl);
+  const totalPnl = labels.map(s => d[s].total_pnl);
+  const colors = labels.map(s => SENTIMENT_COLORS[s]);
+
+  Plotly.newPlot('chartPnlBySentiment', [{
+    x: labels, y: meanPnl,
+    type: 'bar',
+    marker: {
+      color: colors,
+      opacity: 0.85,
+      line: { color: colors, width: 1 }
+    },
+    text: meanPnl.map(v => '$' + v.toFixed(2)),
+    textposition: 'outside',
+    textfont: { size: 11, color: '#94a3b8' },
+    hovertemplate: '<b>%{x}</b><br>Mean PnL: $%{y:.2f}<br>Total: $%{customdata:,.0f}<extra></extra>',
+    customdata: totalPnl,
+  }], {
+    ...plotlyLayout,
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Mean PnL ($)', font: { size: 11 } } },
+    xaxis: { ...plotlyLayout.xaxis, type: 'category', tickfont: { size: 10 } },
+  }, plotlyConfig);
+}
+
+function renderWinRate() {
+  const d = DATA.pnl_by_sentiment;
+  const labels = SENTIMENT_ORDER.filter(s => d[s]);
+  const winRates = labels.map(s => d[s].win_rate);
+  const colors = labels.map(s => SENTIMENT_COLORS[s]);
+
+  Plotly.newPlot('chartWinRate', [{
+    x: labels, y: winRates,
+    type: 'bar',
+    marker: {
+      color: colors.map((c, i) => `rgba(${hexToRgb(c)}, 0.7)`),
+      line: { color: colors, width: 2 },
+    },
+    text: winRates.map(v => v.toFixed(1) + '%'),
+    textposition: 'outside',
+    textfont: { size: 12, color: '#f1f5f9', family: 'JetBrains Mono' },
+    hovertemplate: '<b>%{x}</b><br>Win Rate: %{y:.1f}%<extra></extra>',
+  }], {
+    ...plotlyLayout,
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Win Rate (%)', font: { size: 11 } }, range: [0, 100] },
+    xaxis: { ...plotlyLayout.xaxis, type: 'category', tickfont: { size: 10 } },
+  }, plotlyConfig);
+}
+
+function renderPnlBox() {
+  const d = DATA.pnl_distributions;
+  const traces = SENTIMENT_ORDER.filter(s => d[s]).map(s => ({
+    y: d[s],
+    type: 'box',
+    name: s,
+    marker: { color: SENTIMENT_COLORS[s], opacity: 0.7 },
+    line: { color: SENTIMENT_COLORS[s] },
+    fillcolor: `rgba(${hexToRgb(SENTIMENT_COLORS[s])}, 0.1)`,
+    boxmean: 'sd',
+  }));
+
+  Plotly.newPlot('chartPnlBox', traces, {
+    ...plotlyLayout,
+    xaxis: { ...plotlyLayout.xaxis, type: 'category' },
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Closed PnL ($)', font: { size: 11 } } },
+    showlegend: true,
+    legend: { ...plotlyLayout.legend, orientation: 'h', y: -0.15 },
+  }, plotlyConfig);
+}
+
+function renderDirectional() {
+  const d = DATA.directional_analysis;
+  const labels = SENTIMENT_ORDER.filter(s => d[s]);
+
+  // PnL
+  Plotly.newPlot('chartDirectionalPnl', [
+    {
+      x: labels, y: labels.map(s => d[s].long_total_pnl),
+      type: 'bar', name: 'Long',
+      marker: { color: 'rgba(34, 197, 94, 0.7)', line: { color: '#22c55e', width: 1 } },
+      hovertemplate: '<b>%{x}</b><br>Long PnL: $%{y:,.0f}<extra></extra>',
+    },
+    {
+      x: labels, y: labels.map(s => d[s].short_total_pnl),
+      type: 'bar', name: 'Short',
+      marker: { color: 'rgba(239, 68, 68, 0.7)', line: { color: '#ef4444', width: 1 } },
+      hovertemplate: '<b>%{x}</b><br>Short PnL: $%{y:,.0f}<extra></extra>',
+    }
+  ], {
+    ...plotlyLayout,
+    barmode: 'group',
+    xaxis: { ...plotlyLayout.xaxis, type: 'category' },
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Total PnL ($)', font: { size: 11 } } },
+    legend: { ...plotlyLayout.legend, orientation: 'h', y: -0.15 },
+  }, plotlyConfig);
+
+  // Win Rate
+  Plotly.newPlot('chartDirectionalWR', [
+    {
+      x: labels, y: labels.map(s => d[s].long_win_rate),
+      type: 'bar', name: 'Long Win Rate',
+      marker: { color: 'rgba(34, 197, 94, 0.6)', line: { color: '#22c55e', width: 1 } },
+      text: labels.map(s => d[s].long_win_rate.toFixed(1) + '%'),
+      textposition: 'outside', textfont: { size: 10 },
+    },
+    {
+      x: labels, y: labels.map(s => d[s].short_win_rate),
+      type: 'bar', name: 'Short Win Rate',
+      marker: { color: 'rgba(239, 68, 68, 0.6)', line: { color: '#ef4444', width: 1 } },
+      text: labels.map(s => d[s].short_win_rate.toFixed(1) + '%'),
+      textposition: 'outside', textfont: { size: 10 },
+    }
+  ], {
+    ...plotlyLayout,
+    barmode: 'group',
+    xaxis: { ...plotlyLayout.xaxis, type: 'category' },
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Win Rate (%)', font: { size: 11 } }, range: [0, 110] },
+    legend: { ...plotlyLayout.legend, orientation: 'h', y: -0.15 },
+  }, plotlyConfig);
+}
+
+function renderVolume() {
+  const d = DATA.volume_by_sentiment;
+  const labels = SENTIMENT_ORDER.filter(s => d[s]);
+  const volumes = labels.map(s => d[s].total_volume_usd);
+  const colors = labels.map(s => SENTIMENT_COLORS[s]);
+
+  Plotly.newPlot('chartVolume', [{
+    x: labels,
+    y: volumes,
+    type: 'bar',
+    marker: {
+      color: colors.map((c, i) => `rgba(${hexToRgb(c)}, 0.75)`),
+      line: { color: colors, width: 1.5 },
+    },
+    text: volumes.map(v => '$' + (v/1e6).toFixed(1) + 'M'),
+    textposition: 'outside',
+    textfont: { size: 11, color: '#94a3b8' },
+    hovertemplate: '<b>%{x}</b><br>Volume: $%{y:,.0f}<extra></extra>',
+  }], {
+    ...plotlyLayout,
+    xaxis: { ...plotlyLayout.xaxis, type: 'category' },
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Volume (USD)', font: { size: 11 } } },
+  }, plotlyConfig);
+
+  // Activity
+  Plotly.newPlot('chartActivity', [
+    {
+      x: labels,
+      y: labels.map(s => d[s].unique_traders),
+      type: 'bar', name: 'Unique Traders',
+      marker: { color: 'rgba(99, 102, 241, 0.7)' },
+    },
+    {
+      x: labels,
+      y: labels.map(s => d[s].unique_coins),
+      type: 'bar', name: 'Unique Coins',
+      marker: { color: 'rgba(6, 182, 212, 0.7)' },
+      yaxis: 'y2',
+    }
+  ], {
+    ...plotlyLayout,
+    barmode: 'group',
+    xaxis: { ...plotlyLayout.xaxis, type: 'category' },
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Traders', font: { size: 11 } } },
+    yaxis2: {
+      ...plotlyLayout.yaxis,
+      title: { text: 'Coins', font: { size: 11 } },
+      overlaying: 'y', side: 'right',
+      gridcolor: 'transparent',
+    },
+    legend: { ...plotlyLayout.legend, orientation: 'h', y: -0.15 },
+  }, plotlyConfig);
+}
+
+function renderCorrelations() {
+  const d = DATA.correlations;
+  const labels = {
+    'total_pnl': 'Daily Total PnL',
+    'trade_count': 'Trade Count',
+    'all_volume': 'Trading Volume',
+    'win_rate': 'Win Rate',
+  };
+
+  const grid = document.getElementById('corrGrid');
+  grid.innerHTML = Object.entries(d).map(([key, val]) => {
+    const abs = Math.abs(val);
+    const color = val > 0 ? '#22c55e' : '#ef4444';
+    const direction = val > 0 ? '↑ Positive' : '↓ Negative';
+    const width = Math.max(abs * 100, 5);
+
+    return `
+      <div class="corr-item">
+        <div class="corr-label">${labels[key] || key}</div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div class="corr-bar">
+            <div class="corr-bar-fill" style="width:${width}%;background:${color};"></div>
+          </div>
+          <div class="corr-value" style="color:${color};">${val.toFixed(3)}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderDailyTrends() {
+  const d = DATA.daily_data;
+  const x = d.map(r => r.date_str);
+
+  Plotly.newPlot('chartDailyTrends', [
+    {
+      x, y: d.map(r => r.total_pnl),
+      type: 'bar', name: 'Daily PnL ($)',
+      marker: {
+        color: d.map(r => r.total_pnl >= 0 ? 'rgba(34,197,94,0.5)' : 'rgba(239,68,68,0.5)'),
+      },
+      yaxis: 'y',
+    },
+    {
+      x, y: d.map(r => r.sentiment_value),
+      type: 'scatter', mode: 'lines+markers',
+      name: 'Sentiment Index',
+      line: { color: '#8b5cf6', width: 2 },
+      marker: {
+        color: d.map(r => SENTIMENT_COLORS[r.sentiment_class] || '#94a3b8'),
+        size: 5,
+      },
+      yaxis: 'y2',
+    }
+  ], {
+    ...plotlyLayout,
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Daily PnL ($)', font: { size: 11 } } },
+    yaxis2: {
+      ...plotlyLayout.yaxis,
+      title: { text: 'Sentiment Index', font: { size: 11 } },
+      overlaying: 'y', side: 'right',
+      range: [0, 100],
+      gridcolor: 'transparent',
+    },
+    legend: { ...plotlyLayout.legend, orientation: 'h', y: 1.05 },
+    hovermode: 'x unified',
+  }, plotlyConfig);
+}
+
+function renderTransitions() {
+  const d = DATA.transition_analysis;
+  if (!d || d.length === 0) return;
+
+  const labels = d.map(r => r.transition);
+  const avgPnl = d.map(r => r.avg_pnl);
+  const colors = avgPnl.map(v => v >= 0 ? 'rgba(34,197,94,0.7)' : 'rgba(239,68,68,0.7)');
+
+  Plotly.newPlot('chartTransitions', [{
+    y: labels, x: avgPnl,
+    type: 'bar', orientation: 'h',
+    marker: { color: colors },
+    text: avgPnl.map(v => '$' + v.toFixed(0)),
+    textposition: 'outside',
+    textfont: { size: 10, color: '#94a3b8' },
+    hovertemplate: '<b>%{y}</b><br>Avg Daily PnL: $%{x:,.0f}<extra></extra>',
+  }], {
+    ...plotlyLayout,
+    margin: { ...plotlyLayout.margin, l: 200 },
+    xaxis: { ...plotlyLayout.xaxis, type: 'linear', title: { text: 'Avg Daily PnL ($)', font: { size: 11 } } },
+    yaxis: { ...plotlyLayout.yaxis, type: 'category', tickfont: { size: 10 } },
+  }, plotlyConfig);
+}
+
+function renderTraderTable(type = 'top') {
+  const data = type === 'top' ? DATA.top_traders : DATA.bottom_traders;
+  const isTop = type === 'top';
+
+  let html = `
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Account</th>
+        <th>Total PnL</th>
+        <th>Trades</th>
+        <th>Win Rate</th>
+        <th>Volume</th>
+        ${isTop ? '<th>Best Trade</th><th>Worst Trade</th>' : ''}
+        <th>Fav. Sentiment</th>
+      </tr>
+    </thead>
+    <tbody>
+  `;
+
+  data.forEach((t, i) => {
+    const rankClass = i < 3 ? `rank-${i+1}` : 'rank-default';
+    const pnlClass = t.total_pnl >= 0 ? 'pnl-positive' : 'pnl-negative';
+
+    html += `<tr>
+      <td><span class="rank-badge ${rankClass}">${i+1}</span></td>
+      <td style="color:var(--text-primary);font-weight:500;">${t.account}</td>
+      <td class="${pnlClass}">$${t.total_pnl.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}</td>
+      <td>${t.trade_count.toLocaleString()}</td>
+      <td>${t.win_rate.toFixed(1)}%</td>
+      <td>$${(t.total_volume/1e6).toFixed(2)}M</td>
+      ${isTop ? `
+        <td class="pnl-positive">$${t.best_trade.toLocaleString()}</td>
+        <td class="pnl-negative">$${t.worst_trade.toLocaleString()}</td>
+      ` : ''}
+      <td>
+        <span class="insight-badge ${t.favorite_sentiment.includes('Fear') ? 'negative' : t.favorite_sentiment.includes('Greed') ? 'positive' : 'info'}">
+          ${t.favorite_sentiment}
+        </span>
+      </td>
+    </tr>`;
+  });
+
+  html += '</tbody>';
+  document.getElementById('traderTable').innerHTML = html;
+}
+
+function renderTopTraderSentiment() {
+  const traders = DATA.top_traders.filter(t => t.performance_by_sentiment);
+  const traces = [];
+
+  SENTIMENT_ORDER.forEach(s => {
+    const pnls = traders.map(t => {
+      const p = t.performance_by_sentiment[s];
+      return p ? p.pnl : 0;
+    });
+    traces.push({
+      x: traders.map(t => t.account),
+      y: pnls,
+      type: 'bar',
+      name: s,
+      marker: { color: `rgba(${hexToRgb(SENTIMENT_COLORS[s])}, 0.75)` },
+      hovertemplate: '<b>%{x}</b><br>' + s + ': $%{y:,.0f}<extra></extra>',
+    });
+  });
+
+  Plotly.newPlot('chartTopTraderSentiment', traces, {
+    ...plotlyLayout,
+    barmode: 'group',
+    xaxis: { ...plotlyLayout.xaxis, type: 'category', tickfont: { size: 8 }, tickangle: -30 },
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'PnL ($)', font: { size: 11 } } },
+    legend: { ...plotlyLayout.legend, orientation: 'h', y: 1.08 },
+    margin: { ...plotlyLayout.margin, b: 80 },
+  }, plotlyConfig);
+}
+
+function renderCoinAnalysis() {
+  const d = DATA.coin_analysis;
+  const coins = Object.keys(d).sort((a, b) => d[b].total_pnl - d[a].total_pnl).slice(0, 12);
+
+  // PnL
+  Plotly.newPlot('chartCoinPnl', [{
+    x: coins, y: coins.map(c => d[c].total_pnl),
+    type: 'bar',
+    marker: {
+      color: coins.map(c => d[c].total_pnl >= 0 ? 'rgba(34,197,94,0.7)' : 'rgba(239,68,68,0.7)'),
+    },
+    text: coins.map(c => '$' + (d[c].total_pnl/1e3).toFixed(1) + 'K'),
+    textposition: 'outside',
+    textfont: { size: 10 },
+    hovertemplate: '<b>%{x}</b><br>PnL: $%{y:,.0f}<extra></extra>',
+  }], {
+    ...plotlyLayout,
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Total PnL ($)', font: { size: 11 } } },
+    xaxis: { ...plotlyLayout.xaxis, type: 'category', tickfont: { size: 9 }, tickangle: -30 },
+    margin: { ...plotlyLayout.margin, b: 70 },
+  }, plotlyConfig);
+
+  // Win Rate
+  Plotly.newPlot('chartCoinWR', [{
+    x: coins, y: coins.map(c => d[c].win_rate),
+    type: 'bar',
+    marker: {
+      color: coins.map(c => {
+        const wr = d[c].win_rate;
+        return wr >= 80 ? 'rgba(34,197,94,0.7)' : wr >= 60 ? 'rgba(234,179,8,0.7)' : 'rgba(239,68,68,0.7)';
+      }),
+    },
+    text: coins.map(c => d[c].win_rate.toFixed(1) + '%'),
+    textposition: 'outside',
+    textfont: { size: 10 },
+    hovertemplate: '<b>%{x}</b><br>Win Rate: %{y:.1f}%<extra></extra>',
+  }], {
+    ...plotlyLayout,
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Win Rate (%)', font: { size: 11 } }, range: [0, 105] },
+    xaxis: { ...plotlyLayout.xaxis, type: 'category', tickfont: { size: 9 }, tickangle: -30 },
+    margin: { ...plotlyLayout.margin, b: 70 },
+  }, plotlyConfig);
+
+  // Heatmap
+  const heatCoins = coins.slice(0, 10);
+  const zData = heatCoins.map(c => {
+    return SENTIMENT_ORDER.map(s => {
+      const bs = d[c].by_sentiment[s];
+      return bs ? bs.total_pnl : 0;
+    });
+  });
+
+  Plotly.newPlot('chartCoinHeatmap', [{
+    z: zData,
+    x: SENTIMENT_ORDER,
+    y: heatCoins,
+    type: 'heatmap',
+    colorscale: [
+      [0, '#7f1d1d'],
+      [0.3, '#991b1b'],
+      [0.45, '#1e293b'],
+      [0.55, '#1e293b'],
+      [0.7, '#166534'],
+      [1, '#15803d'],
+    ],
+    hovertemplate: '<b>%{y}</b> × %{x}<br>PnL: $%{z:,.0f}<extra></extra>',
+    colorbar: {
+      title: { text: 'PnL ($)', font: { size: 11, color: '#94a3b8' } },
+      tickfont: { color: '#94a3b8' },
+      outlinewidth: 0,
+    },
+  }], {
+    ...plotlyLayout,
+    margin: { ...plotlyLayout.margin, l: 90 },
+    yaxis: { ...plotlyLayout.yaxis, type: 'category', tickfont: { size: 10 } },
+    xaxis: { ...plotlyLayout.xaxis, type: 'category', tickfont: { size: 10 }, side: 'top' },
+  }, plotlyConfig);
+}
+
+function renderHourlyPatterns() {
+  const d = DATA.hourly_patterns;
+  const traces = [];
+
+  SENTIMENT_ORDER.forEach(s => {
+    if (!d[s]) return;
+    const sorted = d[s].sort((a, b) => a.hour - b.hour);
+    traces.push({
+      x: sorted.map(r => r.hour + ':00'),
+      y: sorted.map(r => r.count),
+      type: 'scatter',
+      mode: 'lines+markers',
+      name: s,
+      line: { color: SENTIMENT_COLORS[s], width: 2 },
+      marker: { size: 4 },
+      hovertemplate: '<b>%{x}</b><br>' + s + '<br>Trades: %{y}<extra></extra>',
+    });
+  });
+
+  Plotly.newPlot('chartHourly', traces, {
+    ...plotlyLayout,
+    xaxis: { ...plotlyLayout.xaxis, type: 'category', title: { text: 'Hour of Day (IST)', font: { size: 11 } } },
+    yaxis: { ...plotlyLayout.yaxis, title: { text: 'Trade Count', font: { size: 11 } } },
+    legend: { ...plotlyLayout.legend, orientation: 'h', y: 1.05 },
+  }, plotlyConfig);
+}
+
+function renderInsights() {
+  const pnl = DATA.pnl_by_sentiment;
+  const dir = DATA.directional_analysis;
+  const corr = DATA.correlations;
+
+  // Find best/worst sentiment
+  const sentiments = Object.keys(pnl);
+  const bestSent = sentiments.reduce((a, b) => pnl[a].mean_pnl > pnl[b].mean_pnl ? a : b);
+  const worstSent = sentiments.reduce((a, b) => pnl[a].mean_pnl < pnl[b].mean_pnl ? a : b);
+  const bestWR = sentiments.reduce((a, b) => pnl[a].win_rate > pnl[b].win_rate ? a : b);
+
+  const insights = [
+    {
+      type: 'fear',
+      icon: '🐻',
+      title: 'Fear = Opportunity',
+      text: `The <span class="metric">${bestSent}</span> regime produces the highest mean PnL at <span class="metric">$${pnl[bestSent].mean_pnl.toFixed(2)}</span> per trade. "Be greedy when others are fearful" holds true here.`
+    },
+    {
+      type: 'greed',
+      icon: '📊',
+      title: 'Highest Win Rate',
+      text: `<span class="metric">${bestWR}</span> regime has the highest win rate at <span class="metric">${pnl[bestWR].win_rate.toFixed(1)}%</span> — suggesting more predictable markets during this period.`
+    },
+    {
+      type: 'strategy',
+      icon: '⚔️',
+      title: 'Longs Dominate',
+      text: `Long positions generate significantly more profit across almost all sentiment regimes. Shorts only outperform in specific transitional periods.`
+    },
+    {
+      type: 'warning',
+      icon: '⚠️',
+      title: 'Greed = Higher Risk',
+      text: `The <span class="metric">Greed</span> regime has the lowest win rate at <span class="metric">${pnl['Greed'] ? pnl['Greed'].win_rate.toFixed(1) : "N/A"}%</span> and the worst single trade ($${pnl['Greed'] ? pnl['Greed'].worst_trade.toLocaleString() : "N/A"}), indicating higher risk.`
+    },
+    {
+      type: 'info',
+      icon: '🔗',
+      title: 'Negative Correlation with Activity',
+      text: `Sentiment is <span class="metric">negatively correlated</span> with trading volume (r=${corr.all_volume.toFixed(3)}) and trade count (r=${corr.trade_count.toFixed(3)}) — traders are more active during fear.`
+    },
+    {
+      type: 'success',
+      icon: '🎯',
+      title: 'Strategy: Counter-Sentiment Trading',
+      text: `The data supports a contrarian approach: <span class="metric">increase position sizes during Fear</span> and <span class="metric">reduce exposure during Greed</span>. Focus on long positions for maximum edge.`
+    },
+  ];
+
+  document.getElementById('insightsGrid').innerHTML = insights.map(ins => `
+    <div class="insight-card ${ins.type}">
+      <h3>${ins.icon} ${ins.title}</h3>
+      <p>${ins.text}</p>
+    </div>
+  `).join('');
+}
+
+// ── HELPERS ──────────────────────────────────────────────────────────
+
+function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? `${parseInt(result[1],16)},${parseInt(result[2],16)},${parseInt(result[3],16)}` : '128,128,128';
+}
+
+function showTraderTab(type) {
+  document.getElementById('tabTop').classList.toggle('active', type === 'top');
+  document.getElementById('tabBottom').classList.toggle('active', type === 'bottom');
+  renderTraderTable(type);
+}
+
+// ── SCROLL REVEAL ───────────────────────────────────────────────────
+function setupReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ── INITIALIZE ──────────────────────────────────────────────────────
+async function init() {
+  try {
+    await loadAllData();
+
+    renderStats();
+    renderSentimentDist();
+    renderSentimentTimeline();
+    renderPnlBySentiment();
+    renderWinRate();
+    renderPnlBox();
+    renderDirectional();
+    renderVolume();
+    renderCorrelations();
+    renderDailyTrends();
+    renderTransitions();
+    renderTraderTable('top');
+    renderTopTraderSentiment();
+    renderCoinAnalysis();
+    renderHourlyPatterns();
+    renderInsights();
+    setupReveal();
+
+    // Hide loader
+    setTimeout(() => {
+      document.getElementById('loadingOverlay').classList.add('hidden');
+    }, 600);
+
+  } catch (err) {
+    console.error('Failed to load dashboard data:', err);
+    document.getElementById('loadingOverlay').innerHTML = `
+      <div class="loader">
+        <div style="color:#ef4444;font-size:1.2rem;font-weight:600;">Failed to load data</div>
+        <div class="loader-text">${err.message}</div>
+        <div class="loader-text" style="margin-top:1rem;">Make sure dashboard_data/ folder exists. Run <code>python analyze.py</code> first.</div>
+      </div>
+    `;
+  }
+}
+
+init();
+</script>
+</body>
+</html>

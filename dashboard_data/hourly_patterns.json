@@ -1,0 +1,612 @@
+{
+  "Extreme Fear": [
+    {
+      "hour": 0,
+      "count": 517,
+      "total_pnl": -49183.144922
+    },
+    {
+      "hour": 1,
+      "count": 518,
+      "total_pnl": 148409.572713
+    },
+    {
+      "hour": 2,
+      "count": 121,
+      "total_pnl": 22977.820097
+    },
+    {
+      "hour": 3,
+      "count": 153,
+      "total_pnl": -9601.050699
+    },
+    {
+      "hour": 4,
+      "count": 588,
+      "total_pnl": 65235.841024
+    },
+    {
+      "hour": 5,
+      "count": 135,
+      "total_pnl": 2652.804216
+    },
+    {
+      "hour": 6,
+      "count": 401,
+      "total_pnl": 48007.937485
+    },
+    {
+      "hour": 7,
+      "count": 394,
+      "total_pnl": 145743.52462799998
+    },
+    {
+      "hour": 8,
+      "count": 554,
+      "total_pnl": 191513.597716
+    },
+    {
+      "hour": 9,
+      "count": 95,
+      "total_pnl": 26074.363751999997
+    },
+    {
+      "hour": 10,
+      "count": 197,
+      "total_pnl": -3946.191786
+    },
+    {
+      "hour": 11,
+      "count": 315,
+      "total_pnl": 85826.131668
+    },
+    {
+      "hour": 12,
+      "count": 289,
+      "total_pnl": -968.6072549999999
+    },
+    {
+      "hour": 13,
+      "count": 138,
+      "total_pnl": 1114.631866
+    },
+    {
+      "hour": 14,
+      "count": 224,
+      "total_pnl": 25323.685219
+    },
+    {
+      "hour": 15,
+      "count": 441,
+      "total_pnl": 34484.760215
+    },
+    {
+      "hour": 16,
+      "count": 258,
+      "total_pnl": 6390.6442609999995
+    },
+    {
+      "hour": 17,
+      "count": 549,
+      "total_pnl": 41347.527332
+    },
+    {
+      "hour": 18,
+      "count": 165,
+      "total_pnl": 31057.816046
+    },
+    {
+      "hour": 19,
+      "count": 604,
+      "total_pnl": 30192.655141999996
+    },
+    {
+      "hour": 20,
+      "count": 873,
+      "total_pnl": 24157.896081
+    },
+    {
+      "hour": 21,
+      "count": 177,
+      "total_pnl": -6648.395638
+    },
+    {
+      "hour": 22,
+      "count": 502,
+      "total_pnl": -12002.661211
+    },
+    {
+      "hour": 23,
+      "count": 1150,
+      "total_pnl": 43230.175209
+    }
+  ],
+  "Fear": [
+    {
+      "hour": 0,
+      "count": 1444,
+      "total_pnl": 147020.633104
+    },
+    {
+      "hour": 1,
+      "count": 1818,
+      "total_pnl": 281741.413702
+    },
+    {
+      "hour": 2,
+      "count": 602,
+      "total_pnl": 169646.25483
+    },
+    {
+      "hour": 3,
+      "count": 608,
+      "total_pnl": 186931.886014
+    },
+    {
+      "hour": 4,
+      "count": 710,
+      "total_pnl": 43436.50442
+    },
+    {
+      "hour": 5,
+      "count": 979,
+      "total_pnl": 127045.288241
+    },
+    {
+      "hour": 6,
+      "count": 1068,
+      "total_pnl": 76248.111899
+    },
+    {
+      "hour": 7,
+      "count": 1422,
+      "total_pnl": 456848.795793
+    },
+    {
+      "hour": 8,
+      "count": 1501,
+      "total_pnl": 153705.879186
+    },
+    {
+      "hour": 9,
+      "count": 1916,
+      "total_pnl": 75145.921079
+    },
+    {
+      "hour": 10,
+      "count": 330,
+      "total_pnl": 15417.89132
+    },
+    {
+      "hour": 11,
+      "count": 339,
+      "total_pnl": 50242.033967
+    },
+    {
+      "hour": 12,
+      "count": 863,
+      "total_pnl": 632461.843332
+    },
+    {
+      "hour": 13,
+      "count": 695,
+      "total_pnl": 2882.86461
+    },
+    {
+      "hour": 14,
+      "count": 803,
+      "total_pnl": 21745.615008
+    },
+    {
+      "hour": 15,
+      "count": 986,
+      "total_pnl": 74000.127064
+    },
+    {
+      "hour": 16,
+      "count": 592,
+      "total_pnl": 71237.268864
+    },
+    {
+      "hour": 17,
+      "count": 922,
+      "total_pnl": 57404.630348
+    },
+    {
+      "hour": 18,
+      "count": 1697,
+      "total_pnl": 227211.468294
+    },
+    {
+      "hour": 19,
+      "count": 1428,
+      "total_pnl": 159408.332778
+    },
+    {
+      "hour": 20,
+      "count": 1597,
+      "total_pnl": 58962.054495
+    },
+    {
+      "hour": 21,
+      "count": 1388,
+      "total_pnl": 116603.982245
+    },
+    {
+      "hour": 22,
+      "count": 1619,
+      "total_pnl": 84582.982473
+    },
+    {
+      "hour": 23,
+      "count": 1154,
+      "total_pnl": 57636.596714
+    }
+  ],
+  "Neutral": [
+    {
+      "hour": 0,
+      "count": 672,
+      "total_pnl": 55221.455451
+    },
+    {
+      "hour": 1,
+      "count": 1086,
+      "total_pnl": -13775.390043
+    },
+    {
+      "hour": 2,
+      "count": 570,
+      "total_pnl": -26442.259875
+    },
+    {
+      "hour": 3,
+      "count": 831,
+      "total_pnl": 101608.974988
+    },
+    {
+      "hour": 4,
+      "count": 705,
+      "total_pnl": 158208.047426
+    },
+    {
+      "hour": 5,
+      "count": 568,
+      "total_pnl": 76483.478322
+    },
+    {
+      "hour": 6,
+      "count": 455,
+      "total_pnl": 21716.337953
+    },
+    {
+      "hour": 7,
+      "count": 553,
+      "total_pnl": 101676.851823
+    },
+    {
+      "hour": 8,
+      "count": 701,
+      "total_pnl": -19564.567798
+    },
+    {
+      "hour": 9,
+      "count": 444,
+      "total_pnl": 26575.581525
+    },
+    {
+      "hour": 10,
+      "count": 703,
+      "total_pnl": 12458.700554
+    },
+    {
+      "hour": 11,
+      "count": 286,
+      "total_pnl": 46888.359324
+    },
+    {
+      "hour": 12,
+      "count": 569,
+      "total_pnl": 32343.684878
+    },
+    {
+      "hour": 13,
+      "count": 216,
+      "total_pnl": 8484.477275
+    },
+    {
+      "hour": 14,
+      "count": 316,
+      "total_pnl": 29363.925674000002
+    },
+    {
+      "hour": 15,
+      "count": 266,
+      "total_pnl": 5946.420929
+    },
+    {
+      "hour": 16,
+      "count": 570,
+      "total_pnl": 54298.128444
+    },
+    {
+      "hour": 17,
+      "count": 381,
+      "total_pnl": 23470.322158
+    },
+    {
+      "hour": 18,
+      "count": 1531,
+      "total_pnl": 29947.858997
+    },
+    {
+      "hour": 19,
+      "count": 1991,
+      "total_pnl": 61274.049105
+    },
+    {
+      "hour": 20,
+      "count": 675,
+      "total_pnl": 13544.737016000003
+    },
+    {
+      "hour": 21,
+      "count": 725,
+      "total_pnl": 161674.659295
+    },
+    {
+      "hour": 22,
+      "count": 309,
+      "total_pnl": 15084.072133
+    },
+    {
+      "hour": 23,
+      "count": 720,
+      "total_pnl": 105858.686541
+    }
+  ],
+  "Greed": [
+    {
+      "hour": 0,
+      "count": 746,
+      "total_pnl": 32269.006598
+    },
+    {
+      "hour": 1,
+      "count": 1248,
+      "total_pnl": 31014.539857
+    },
+    {
+      "hour": 2,
+      "count": 1070,
+      "total_pnl": 22232.527399
+    },
+    {
+      "hour": 3,
+      "count": 1496,
+      "total_pnl": 16714.365835
+    },
+    {
+      "hour": 4,
+      "count": 1182,
+      "total_pnl": 64872.380428000004
+    },
+    {
+      "hour": 5,
+      "count": 933,
+      "total_pnl": 79544.04852
+    },
+    {
+      "hour": 6,
+      "count": 873,
+      "total_pnl": 9305.054641
+    },
+    {
+      "hour": 7,
+      "count": 510,
+      "total_pnl": 35078.295921
+    },
+    {
+      "hour": 8,
+      "count": 759,
+      "total_pnl": 53596.497677
+    },
+    {
+      "hour": 9,
+      "count": 158,
+      "total_pnl": 31746.063676
+    },
+    {
+      "hour": 10,
+      "count": 583,
+      "total_pnl": 235863.080098
+    },
+    {
+      "hour": 11,
+      "count": 302,
+      "total_pnl": 207486.64461
+    },
+    {
+      "hour": 12,
+      "count": 267,
+      "total_pnl": 3017.6120880000003
+    },
+    {
+      "hour": 13,
+      "count": 498,
+      "total_pnl": 89812.216626
+    },
+    {
+      "hour": 14,
+      "count": 329,
+      "total_pnl": 6945.268127
+    },
+    {
+      "hour": 15,
+      "count": 616,
+      "total_pnl": 7255.273564
+    },
+    {
+      "hour": 16,
+      "count": 783,
+      "total_pnl": 12658.422035
+    },
+    {
+      "hour": 17,
+      "count": 486,
+      "total_pnl": 9494.896584
+    },
+    {
+      "hour": 18,
+      "count": 597,
+      "total_pnl": 15840.937226
+    },
+    {
+      "hour": 19,
+      "count": 1084,
+      "total_pnl": 264606.09364
+    },
+    {
+      "hour": 20,
+      "count": 803,
+      "total_pnl": 355193.488812
+    },
+    {
+      "hour": 21,
+      "count": 1533,
+      "total_pnl": -329842.443801
+    },
+    {
+      "hour": 22,
+      "count": 1654,
+      "total_pnl": 206874.755151
+    },
+    {
+      "hour": 23,
+      "count": 810,
+      "total_pnl": -125165.1065
+    }
+  ],
+  "Extreme Greed": [
+    {
+      "hour": 0,
+      "count": 580,
+      "total_pnl": -95765.272203
+    },
+    {
+      "hour": 1,
+      "count": 794,
+      "total_pnl": 38518.402661
+    },
+    {
+      "hour": 2,
+      "count": 662,
+      "total_pnl": 25253.840672
+    },
+    {
+      "hour": 3,
+      "count": 544,
+      "total_pnl": 24327.502221
+    },
+    {
+      "hour": 4,
+      "count": 447,
+      "total_pnl": 14959.0555
+    },
+    {
+      "hour": 5,
+      "count": 1020,
+      "total_pnl": 77058.753673
+    },
+    {
+      "hour": 6,
+      "count": 643,
+      "total_pnl": 50601.637006
+    },
+    {
+      "hour": 7,
+      "count": 366,
+      "total_pnl": 9452.311255
+    },
+    {
+      "hour": 8,
+      "count": 248,
+      "total_pnl": 56241.222138
+    },
+    {
+      "hour": 9,
+      "count": 421,
+      "total_pnl": 26235.333318
+    },
+    {
+      "hour": 10,
+      "count": 345,
+      "total_pnl": 24832.213445999998
+    },
+    {
+      "hour": 11,
+      "count": 455,
+      "total_pnl": 26120.24583
+    },
+    {
+      "hour": 12,
+      "count": 402,
+      "total_pnl": -725.6382190000006
+    },
+    {
+      "hour": 13,
+      "count": 422,
+      "total_pnl": 3148.9790310000003
+    },
+    {
+      "hour": 14,
+      "count": 603,
+      "total_pnl": 20069.375829
+    },
+    {
+      "hour": 15,
+      "count": 411,
+      "total_pnl": 81991.885052
+    },
+    {
+      "hour": 16,
+      "count": 272,
+      "total_pnl": 10867.923368
+    },
+    {
+      "hour": 17,
+      "count": 405,
+      "total_pnl": 7391.850439
+    },
+    {
+      "hour": 18,
+      "count": 436,
+      "total_pnl": 13212.282204
+    },
+    {
+      "hour": 19,
+      "count": 656,
+      "total_pnl": 40341.572497
+    },
+    {
+      "hour": 20,
+      "count": 1039,
+      "total_pnl": 44593.151361
+    },
+    {
+      "hour": 21,
+      "count": 824,
+      "total_pnl": 51374.272395
+    },
+    {
+      "hour": 22,
+      "count": 809,
+      "total_pnl": 45225.336552
+    },
+    {
+      "hour": 23,
+      "count": 879,
+      "total_pnl": 37211.038121
+    }
+  ]
+}
