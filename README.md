@@ -1,6 +1,7 @@
 # Bitcoin Market Sentiment × Hyperliquid Trader Performance Analysis
 
 An end-to-end data analysis pipeline and interactive web dashboard that explores the relationship between **Bitcoin's Fear & Greed Index** and **Hyperliquid trader performance** — uncovering hidden patterns and delivering insights that drive smarter trading strategies.
+
 U can view this : https://hemanthtempalli.github.io/Trader-Behavior-Insights/
 ---
 
